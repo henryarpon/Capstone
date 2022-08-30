@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+<div class="login-box">
+  <h2>Login</h2>
+  <form method="POST" autocomplete="off">
+    <div class="user-box">
+      <input type="text" name="username" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" required="">
+      <label>Password</label>
+    </div>
+
+  <!-- <button type="submit" formaction="/register">Sign-up</button> -->
+  <div class="d-grid gap-2">
+  <button type="submit" class="btn btn-light" formaction="/login">Log-in</button>
+  </div>
+  <p><%= message.error %></p>
+
+  </form>
+
+</div>
+
+<%- include('partials/footer') %>

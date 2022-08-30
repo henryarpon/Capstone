@@ -1,0 +1,27 @@
+<%- include('partials/content-header') -%>
+
+<div class="addpbox"> 
+    <h2>Add Product </h2>
+
+    <form action="">
+       <div class="input-box"> 
+       <label for="">Product Name</label>
+       <input type="text"><br>
+       <label for="">Product Quantity</label>
+       <input type="number"><br>
+       <label for="">Product Price Per Unit</label>
+       <input type="number"><br>
+       <label for="Received On"></label>
+       <input type="date">
+       </div>
+       <div class="d-grid gap-2 btn1">
+       <button type="button" class="btn btn-light">Save and Continue</button>
+       </div>
+       <div class="d-grid gap-2">
+       <button type="button" class="btn btn-light" onclick="window.location='/inventory'">Exit</button>
+       </div>
+
+    </form>
+</div>
+
+<%- include('partials/footer'); -%>
