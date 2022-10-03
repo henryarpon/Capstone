@@ -1,13 +1,23 @@
 
 body {
   
-  background-image: url('../images/netsbackground.jpg');
+   background-image: url('../images/netsbackground.jpg');
   background-repeat: no-repeat, repeat;
         background-size: cover;
-
+/* 
   margin: 0; 
-  padding: 0;
+  padding: 0; */
+  font-family: 'Fira Code', monospace;
         
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
 }
 
 
@@ -17,8 +27,12 @@ body {
    
    
    display: flex;
-   margin: 0px auto 20px;
+   margin: 0px auto 0px;
    padding: 60px;
+   background-color:hsla(166,100%,50%,0.82);
+background-image:
+radial-gradient(at 16% 20%, hsla(85,62%,65%,1) 0px, transparent 50%),
+radial-gradient(at 86% 72%, hsla(227,92%,68%,1) 0px, transparent 50%);
   
 }
 
@@ -27,13 +41,27 @@ body {
    margin-top: 10%;
 }
 
-/* .topimage {
+#midcontainer {
 
-   width: 10%;
-   height: 10%;
-} */
+  
+  padding: 50px 200px 50px;
+  background-color:hsla(166,100%,50%,0.82);
+background-image:
+radial-gradient(at 16% 20%, hsla(227,92%,68%,1) 0px, transparent 50%),
+radial-gradient(at 86% 72%, hsla(85,62%,65%,1) 0px, transparent 50%);
 
+}
 
+.midheader {
+   position: relative;
+   text-align: center;
+   padding: 5px;
+   margin: auto;
+   margin-bottom: 20px;
+   border: 5px solid #002E94;
+   width: 50%;
+
+}
 
 /* .. */
 
@@ -308,21 +336,21 @@ text-align: center;
 
 /*footer style */
 
-/* .footer-padding {
-  padding-bottom: 60px;
-} */
 
-.footer {
+#footer {
+  
   position: absolute;
-  text-align: center;
   bottom: 0;
   width: 100%;
-  height:40px;
-  background-color: #7C3E66;
+  height: 2.5rem;
+  text-align: center;
+  background-color: #251B37;
 }
 
-.footer p {
-  margin-top: 15px;
+#footer p {
   font-size: 12px;
   color: #F2EBE9;
+  margin-bottom: 0px;
+  padding: 10px 0px 0px;
+ 
 }
