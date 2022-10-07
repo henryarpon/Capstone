@@ -219,15 +219,17 @@ h1 {
   display: inline-block;
   padding: 10px 20px;
   color: #055c61;
-  font-size: 16px;
+  font-size: large;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
   margin-top: 40px;
+  margin-bottom: 20px;
   letter-spacing: 4px
   background-color: #243b55;
 };
+
 
 .login-box button:hover {
 

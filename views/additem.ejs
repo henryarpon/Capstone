@@ -3,19 +3,19 @@
 <div class="addpbox"> 
     <h2>Add Product </h2>
 
-    <form action="">
+    <form action="/additem" method="post">
        <div class="input-box"> 
        <label for="">Product Name</label>
-       <input type="text"><br>
+       <input type="text" name="productName"><br>
        <label for="">Product Quantity</label>
-       <input type="number"><br>
+       <input type="number" name="qtyReceived"><br>
        <label for="">Product Price Per Unit</label>
-       <input type="number"><br>
+       <input type="number" name="price"><br>
        <label for="Received On"></label>
-       <input type="date">
+       <input type="date" name="date">
        </div>
        <div class="d-grid gap-2 btn1">
-       <button type="button" class="btn btn-light">Save and Continue</button>
+       <button type="submit" class="btn btn-light" name="invItem" value="invRecords">Save and Continue</button>
        </div>
        <div class="d-grid gap-2">
        <button type="button" class="btn btn-light" onclick="window.location='/inventory'">Exit</button>

@@ -42,6 +42,7 @@ app.use(session({
 
 mongoose.connect('mongodb://localhost:27017/userlistDB', {useNewUrlParser: true});
 
+
 const userSchema = new mongoose.Schema( {
    email: String,
    password: String
@@ -58,6 +59,20 @@ passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+
+const inventorySchema = new mongoose.Schema( {
+   productName: String,
+   qtyReceived: Number,
+   qtyIssued: Number,
+   balance: Number,
+   price: Number,
+   dateAdded: Date,
+   action: Boolean
+}); 
+
+const Inventory = mongoose.model('Inventory', inventorySchema);
+
 
 //GET request 
 
@@ -147,6 +162,25 @@ app.post('/login', (req, res) => {
         });
       }
    });
+
+}); 
+
+app.post('/additem', (req, res) => {
+
+   const productName = req.body.productName;
+   const qtyReceived = req.body.qtyReceived; 
+   const price = req.body.price;
+   const date = req.body.date; 
+
+   const inventory = new Inventory({
+      productName: productName,
+      qtyReceived: qtyReceived,
+      price: price,
+      dateAdded: date,  
+   });
+
+   inventory.save();
+   res.redirect('/inventory');
 
 }); 
 
