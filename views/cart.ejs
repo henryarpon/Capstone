@@ -1,3 +1,26 @@
 <%- include('partials/content-header') -%>
 
+  <section class="cartcontent">
+
+    <div class="card">
+      <div class="card-header fs-1">
+        Cart
+      </div>
+      <div class="card-body cartbox">
+        <p>Item Name: </p>
+        <p> Price per item: </p>
+        <form action="">
+           <label for="qty">Quantity: </label>
+           <input type="number" id="qty">
+           <button class="btn btn-primary" type="submit">Change Quantity</button>
+        </form>
+        <a href="#" class="btn btn-primary">Delete</a>
+        <a href="#" class="btn btn-primary">Confirm</a>
+      </div>
+    </div>
+
+    
+
+  </section>
+
 <%- include('partials/footer'); -%>

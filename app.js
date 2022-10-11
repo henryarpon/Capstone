@@ -169,6 +169,8 @@ app.post('/additem', (req, res) => {
 
    const productName = req.body.productName;
    const qtyReceived = req.body.qtyReceived; 
+   let qtyIssued = 0;
+   let balance = 0;
    const price = req.body.price;
    const date = req.body.date; 
 

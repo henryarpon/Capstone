@@ -72,7 +72,7 @@ radial-gradient(at 86% 72%, hsla(85,62%,65%,1) 0px, transparent 50%);
 
 text-align: center;
 padding: 60px;
-background-color: #8BBCCC;
+background-color: #4C6793;
 font-size: large;
 font-weight: bold;
 }
@@ -132,6 +132,23 @@ hr {
   top: 0;
   
 }
+
+.cartcontent {
+
+  margin-top: 50x;
+  padding: 100px;
+}
+
+.cartcontent p {
+
+  color: #000000;
+}
+
+.cartbox > * {
+  margin: 10px;
+}
+
+
 
 .salestable {
 
