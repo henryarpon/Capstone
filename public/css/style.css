@@ -25,51 +25,66 @@ body {
 
 .topcontainer {
    
-   
    display: flex;
    margin: 0px auto 0px;
-   padding: 60px;
+   padding: 120px 60px 60px;
    background-color:hsla(166,100%,50%,0.82);
 background-image:
 radial-gradient(at 16% 20%, hsla(85,62%,65%,1) 0px, transparent 50%),
-radial-gradient(at 86% 72%, hsla(227,92%,68%,1) 0px, transparent 50%);
+radial-gradient(at 86% 72%, hsla(227,92%,68%,1) 0px, transparent 50%);  
+}
+
+.topcontainer p {
   
+  font-size: 25px;
+  margin-top: 5%;
+   
 }
 
 .topheader {
 
-   margin-top: 10%;
+   margin-top: 5%;
 }
 
-#midcontainer {
 
+
+#midcontainer {
   
-  padding: 50px 200px 50px;
-  background-color:hsla(166,100%,50%,0.82);
+padding: 40px 200px 40px;
+background-color:hsla(166,100%,50%,0.82);
+padding-bottom: 80px;
 background-image:
 radial-gradient(at 16% 20%, hsla(227,92%,68%,1) 0px, transparent 50%),
 radial-gradient(at 86% 72%, hsla(85,62%,65%,1) 0px, transparent 50%);
-
 }
 
 .midheader {
+
    position: relative;
    text-align: center;
    padding: 5px;
-   margin: auto;
-   margin-bottom: 20px;
+   margin: 20px auto 20px;
    border: 5px solid #002E94;
    width: 50%;
-
 }
+
+#bottomcontainer {
+
+text-align: center;
+padding: 60px;
+background-color: #4C6793;
+font-size: large;
+font-weight: bold;
+}
+
 
 /* .. */
 
 
-.dashboard {
-  margin: 25px 50px 75px;
-}
 
+.dashboard {
+  margin: 100px 50px 75px;
+}
 
 .addloc {
   margin-top: 35px;
@@ -77,14 +92,11 @@ radial-gradient(at 86% 72%, hsla(85,62%,65%,1) 0px, transparent 50%);
 
 .addprod {
   
-  
   color: #000000;
   opacity: 3;
   font-size: 25px;
   text-decoration: none;
   margin-left: 15%;
-  
-  
 }
 
 hr {
@@ -97,6 +109,11 @@ hr {
   opacity: 3;
 }
 
+.invcontent {
+
+  margin-top: 100px;
+}
+
 .invtable {
   
   margin-top: 30px;
@@ -104,20 +121,48 @@ hr {
   margin-right: auto;
   border: 1px solid black;
   width: 70%;
-  
+}
 
+.bgnavcolor {
+  overflow: hidden;
+  position: fixed;
+  background-color: #243A73;
+  width: 100%;
+  z-index: 99999999;
+  top: 0;
+  
+}
+
+.cartcontent {
+
+  margin-top: 50x;
+  padding: 100px;
+}
+
+.cartcontent p {
+
+  color: #000000;
+}
+
+.cartbox > * {
+  margin: 10px;
 }
 
 
-.bgnavcolor {
-  background-color: #243A73;
-  position: relative;
+
+.salestable {
+
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    width: 70%;
 }
 
 /* login-box style */
 
-
 .login-box {
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -131,6 +176,7 @@ hr {
 }
 
 .login-box h2 {
+
   margin: 0 0 30px;
   padding: 0;
   color: #fff;
@@ -138,10 +184,12 @@ hr {
 }
 
 .login-box .user-box {
+
   position: relative;
 }
 
 .login-box .user-box input {
+
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -152,7 +200,9 @@ hr {
   outline: none;
   background: transparent;
 }
+
 .login-box .user-box label {
+
   position: absolute;
   top:0;
   left: 0;
@@ -173,6 +223,7 @@ h1 {
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
+
   top: -20px;
   left: 0;
   color: #055c61;
@@ -180,21 +231,25 @@ h1 {
 }
 
 .login-box form button {
+
   position: relative;
   display: inline-block;
   padding: 10px 20px;
   color: #055c61;
-  font-size: 16px;
+  font-size: large;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
   margin-top: 40px;
+  margin-bottom: 20px;
   letter-spacing: 4px
   background-color: #243b55;
 };
 
+
 .login-box button:hover {
+
   background: #055c61;
   color: #fff;
   border-radius: 5px;
@@ -205,11 +260,13 @@ h1 {
 }
 
 .login-box button span {
+
   position: absolute;
   display: block;
 }
 
 .login-box button span:nth-child(1) {
+
   top: 0;
   left: -100%;
   width: 100%;
@@ -228,6 +285,7 @@ h1 {
 }
 
 .login-box button span:nth-child(2) {
+
   top: -100%;
   right: 0;
   width: 2px;
@@ -247,6 +305,7 @@ h1 {
 }
 
 .login-box button span:nth-child(3) {
+
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -266,6 +325,7 @@ h1 {
 }
 
 .login-box button span:nth-child(4) {
+
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -283,6 +343,8 @@ h1 {
     bottom: 100%;
   }
 }
+
+/*  Add Product form */
 
 .addpbox {
 
@@ -308,6 +370,7 @@ text-align: center;
 }
 
 .addpbox .input-box input {
+
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -318,7 +381,9 @@ text-align: center;
   outline: none;
   background: transparent;
 }
+
 .addpbox .input-box label {
+
   /* position: absolute;
   top:0;
   left: 0;
@@ -335,7 +400,6 @@ text-align: center;
 
 
 /*footer style */
-
 
 #footer {
   

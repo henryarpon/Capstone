@@ -25,6 +25,7 @@ app.use(session({
    cookie: {
       // Session expires after 1 min of inactivity.
       expires: 60000
+
   }
  }));
  app.use(flash());
@@ -52,12 +53,26 @@ userSchema.plugin(passportLocalMongoose);
 const User = mongoose.model('User', userSchema);
 
 
+const inventorySchema = new mongoose.Schema( {
+   productName: String,
+   qtyReceived: Number,
+   qtyIssued: Number,
+   balance: Number,
+   price: Number,
+   dateAdded: Date,
+   action: Boolean
+}); 
+
+const Inventory = mongoose.model('Inventory', inventorySchema);
+
+
 //passport configuration 
 
 passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
 
 //GET request 
 
@@ -82,20 +97,41 @@ app.get('/login', (req, res) => {
  }); 
 
  app.get('/inventory', (req, res) => {
-   res.render('inventory');
+
+   if (req.isAuthenticated()) {
+      res.render('inventory');
+   } else {
+      res.render('login');
+   }
+   
  });
 
  app.get('/additem', (req, res) => {
-   res.render('additem');
+
+   if (req.isAuthenticated()) {
+      res.render('additem');
+   } else {
+      res.render('login');
+   }
  });
 
 
  app.get('/cart', (req, res) => {
-   res.render('cart');
+
+   if (req.isAuthenticated()) {
+      res.render('cart');
+   } else {
+      res.render('login');
+   }
 });
 
 app.get('/sales', (req, res) => {
-   res.render('sales');
+
+   if (req.isAuthenticated()) {
+      res.render('sales');
+   } else {
+      res.render('login');
+   }
 });
 
 app.get('/logout', function (req, res) {
@@ -147,6 +183,27 @@ app.post('/login', (req, res) => {
         });
       }
    });
+
+}); 
+
+app.post('/additem', (req, res) => {
+
+   const productName = req.body.productName;
+   const qtyReceived = req.body.qtyReceived; 
+   let qtyIssued = 0;
+   let balance = 0;
+   const price = req.body.price;
+   const date = req.body.date; 
+
+   const inventory = new Inventory({
+      productName: productName,
+      qtyReceived: qtyReceived,
+      price: price,
+      dateAdded: date,  
+   });
+
+   inventory.save();
+   res.redirect('/inventory');
 
 }); 
 
