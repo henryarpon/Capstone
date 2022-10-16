@@ -25,6 +25,7 @@ app.use(session({
    cookie: {
       // Session expires after 1 min of inactivity.
       expires: 60000
+
   }
  }));
  app.use(flash());
@@ -42,7 +43,6 @@ app.use(session({
 
 mongoose.connect('mongodb://localhost:27017/userlistDB', {useNewUrlParser: true});
 
-
 const userSchema = new mongoose.Schema( {
    email: String,
    password: String
@@ -51,14 +51,6 @@ const userSchema = new mongoose.Schema( {
 userSchema.plugin(passportLocalMongoose);
 
 const User = mongoose.model('User', userSchema);
-
-
-//passport configuration 
-
-passport.use(User.createStrategy());
-
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 
 const inventorySchema = new mongoose.Schema( {
@@ -72,6 +64,14 @@ const inventorySchema = new mongoose.Schema( {
 }); 
 
 const Inventory = mongoose.model('Inventory', inventorySchema);
+
+
+//passport configuration 
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 //GET request 
@@ -97,20 +97,41 @@ app.get('/login', (req, res) => {
  }); 
 
  app.get('/inventory', (req, res) => {
-   res.render('inventory');
+
+   if (req.isAuthenticated()) {
+      res.render('inventory');
+   } else {
+      res.render('login');
+   }
+   
  });
 
  app.get('/additem', (req, res) => {
-   res.render('additem');
+
+   if (req.isAuthenticated()) {
+      res.render('additem');
+   } else {
+      res.render('login');
+   }
  });
 
 
  app.get('/cart', (req, res) => {
-   res.render('cart');
+
+   if (req.isAuthenticated()) {
+      res.render('cart');
+   } else {
+      res.render('login');
+   }
 });
 
 app.get('/sales', (req, res) => {
-   res.render('sales');
+
+   if (req.isAuthenticated()) {
+      res.render('sales');
+   } else {
+      res.render('login');
+   }
 });
 
 app.get('/logout', function (req, res) {
