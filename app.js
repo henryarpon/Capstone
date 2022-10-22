@@ -41,7 +41,7 @@ app.use(session({
 
 //mongoDB Schema and model
 
-mongoose.connect('mongodb://localhost:27017/userlistDB', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://henryarpon:Welcome03045@cluster0.yjvwcrp.mongodb.net/userlistDB', {useNewUrlParser: true});
 
 const userSchema = new mongoose.Schema( {
    email: String,
@@ -85,6 +85,11 @@ app.get('/login', (req, res) => {
     res.render('login')
  }); 
 
+ app.get('/register', (req, res) => {
+   // req.flash("error", "");
+    res.render('register')
+ }); 
+
  app.get('/dashboard', (req, res) => {
 
 
@@ -113,7 +118,9 @@ app.get('/login', (req, res) => {
    } else {
       res.render('login');
    }
+   res.render('additem');
  });
+
 
 
  app.get('/cart', (req, res) => {
@@ -156,7 +163,7 @@ app.get('/logout', function (req, res) {
          // res.redirect('/register');
       } else {
          passport.authenticate('local')(req, res, () => {
-             res.redirect('/dashboard');
+             res.redirect('/');
          });
       }
    });
